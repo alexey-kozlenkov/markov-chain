@@ -1,0 +1,12 @@
+{
+  "name": "markov-chain",
+  "version": "1.0.0",
+  "description": "This is going to be the most overloaded Markov chain implementation on javascript.",
+  "main": "app.js",
+  "scripts": {},
+  "author": "Alexey Kozlenkov",
+  "dependencies": {
+    "express": "^4.14.0",
+    "http": "0.0.0"
+  }
+}
