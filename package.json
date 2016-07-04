@@ -6,6 +6,7 @@
   "scripts": {},
   "author": "Alexey Kozlenkov",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mathjs": "latest"
   }
 }
