@@ -11,13 +11,21 @@ function markovChainIndex(request, response) {
     response.end(markovChain.getNextState(currentState).toString());
 }
 
+function initMarkovChainProbabilities(request, response) {
+    var probabilities = JSON.parse(request.query.probability);
+    markovChain.initProbabilities(probabilities);
+    console.log("Probabilities received:", probabilities);
+    response.end();
+}
+
 function index(request, response) {
     response.sendFile(path.join(__dirname, "resources", "index.html"));
 }
 
 app.use(express.static("public"));
-app.use("/markov-chain", markovChainIndex);
 app.use("/index", index);
+app.use("/markov-chain", markovChainIndex);
+app.use("/init-markov-chain-probability", initMarkovChainProbabilities);
 
 
 app.listen(3000, function () {

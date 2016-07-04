@@ -12,3 +12,20 @@ function startTimer (state) {
         }
     });
 }
+
+function prepareProbabilities() {
+    var text = $("#inputArea").val();
+    var lines = text.split("\n");
+    var result = [];
+    
+    lines.forEach(function (line) {
+        result.push(line.split(" "));
+    });
+    
+    $.ajax({
+        url: "http://localhost:3000/init-markov-chain-probability",
+        data: {
+            probability: JSON.stringify(result)
+        }
+    });
+}
