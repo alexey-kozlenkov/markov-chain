@@ -2,7 +2,6 @@ var math = require("mathjs");
 
 module.exports = {
     getNextState: getNextState,
-    makeMarkovChain: makeMarkovChain,
     initProbabilities: initProbabilities
 };
 
@@ -41,17 +40,6 @@ function getNextState(currentState) {
         }
     }
 }
-
-function makeMarkovChain(steps) {
-    var currentState = null;
-    var result = [];
-    for (var i = 0; i < steps; i++) {
-        currentState = getNextState(currentState, 123);
-        result.push(currentState);
-    }
-    return result;
-}
-
 
 
 
