@@ -19,7 +19,7 @@ function initProbabilities(probability) {
     probability.forEach(function (line, i) {
         var buffer = [];
         line.forEach(function (probability, j) {
-            buffer[j] = createState(j, parseFloat(probability));
+            buffer[j] = createState(j + 1, parseFloat(probability));
         });
         probabilityMatrix[i] = buffer;
     });
